@@ -16,7 +16,7 @@ if (userAge < 13) {
   userCategory = "Senior";
 }
 
-let p = document.querySelector("p");
+let p = document.getElementById("p");
 let msgConsole = `Hello ${userName}, You are ${userAge} years old.\nCategory: ${userCategory}.`;
 let msgDocument = `Hello ${userName}, You are ${userAge} years old.<br>Category: ${userCategory}.`;
 
