@@ -8,9 +8,7 @@ function startCounter() {
     let timeDiff = eventDate - currentDate;
 
     let day = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    let hour = Math.floor(
-      (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
+    let hour = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let min = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
     let sec = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
