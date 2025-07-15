@@ -76,7 +76,7 @@ h2 {
 }
 
 .edit-btn:hover {
-    color: #4CAF50;
+  color: #4caf50;
 }
 
 .delete-btn {
@@ -90,5 +90,5 @@ h2 {
 }
 
 .delete-btn:hover {
-    color: #f85353;
+  color: #f85353;
 }

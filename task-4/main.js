@@ -34,7 +34,7 @@ function addTask() {
   if (taskType.value === "Task") {
     listItem.style.backgroundColor = "#f85353";
   } else if (taskType.value === "In Progress") {
-    listItem.style.backgroundColor = "orange"
+    listItem.style.backgroundColor = "orange";
   } else {
     listItem.style.backgroundColor = "#4CAF50";
   }
