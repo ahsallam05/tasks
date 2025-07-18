@@ -23,7 +23,7 @@ function startCounter() {
       document.querySelector(".hour").innerHTML = "00";
       document.querySelector(".minute").innerHTML = "00";
       document.querySelector(".second").innerHTML = "00";
-      alert("🥳🥳🥳");
+      alert("Time's up 🥳");
     }
   }, 1000);
 }
