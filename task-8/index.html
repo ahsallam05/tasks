@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts API fetcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Posts</h1>
+    <div id="error"></div>
+    <ul id="posts"></ul>
+  </div>
+
+  <!-- Modal for post details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeBtn" class="close">x</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalBody"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
