@@ -1,0 +1,79 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🛒 Product Management</h2>
+
+    <div class="card p-4 mb-4">
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input class="form-control" [(ngModel)]="product.title" placeholder="Product title">
+            <div class="text-danger small" *ngIf="errors.title">Please enter a title</div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input class="form-control" type="number" [(ngModel)]="product.price" (input)="calcTotal()"
+                placeholder="Price">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Discount</label>
+            <input class="form-control" type="number" [(ngModel)]="product.discount" (input)="calcTotal()"
+                placeholder="Discount">
+            <div class="text-danger small" *ngIf="errors.price">Please enter a valid price</div>
+        </div>
+
+        <div class="mb-3">
+            <span class="fw-bold">Total:</span> {{ total | number:'1.2-2' }} $
+        </div>
+
+        <button class="btn btn-primary w-100" (click)="submit()">
+            <i class="fas" [class.fa-plus]="mode==='create'" [class.fa-save]="mode==='update'"></i>
+            {{ mode === 'create' ? 'Create' : 'Update' }}
+        </button>
+    </div>
+
+    <div class="input-group mb-3">
+        <input class="form-control" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search by title">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+    </div>
+
+    <div *ngIf="products.length > 0" class="mb-3">
+        <button class="btn btn-danger w-100" (click)="deleteAll()">
+            <i class="fas fa-trash-alt"></i> Delete All ({{ products.length }})
+        </button>
+    </div>
+
+    <table *ngIf="filtered.length > 0" class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Total</th>
+                <th><i class="fas fa-edit"></i></th>
+                <th><i class="fas fa-trash"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of filtered; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ p.title }}</td>
+                <td>{{ p.price }}</td>
+                <td>{{ p.discount }}</td>
+                <td>{{ p.total }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" (click)="edit(i)">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="delete(i)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="text-center text-muted" *ngIf="filtered.length === 0">No products found.</p>
+</div>
